@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<databaseChangeLog
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xmlns:ext="http://www.liquibase.org/xml/ns/dbchangelog-ext"
+        xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+        xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.1.xsd
+    http://www.liquibase.org/xml/ns/dbchangelog-ext http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-ext.xsd">
+
+    <changeSet author="macgor" id="1">
+        <insert tableName="account">
+            <column name="id" valueNumeric="3"/>
+            <column name="first_name" value="Adam"/>
+            <column name="last_name" value="Wood"/>
+            <column name="email" value="adam.wood@loyalty.bla"/>
+        </insert>
+
+        <insert tableName="order">
+            <column name="id" valueNumeric="1"/>
+            <column name="order_id" value="1b4a3732-7c98-11ed-a1eb-0242ac120002"/>
+            <column name="amount" value="67.99"/>
+            <column name="order_date" value="2020-01-01"/>
+            <column name="account_id" value="3"/>
+        </insert>
+        <insert tableName="order">
+            <column name="id" valueNumeric="2"/>
+            <column name="order_id" value="1b4a39bc-7c98-11ed-a1eb-0242ac120002"/>
+            <column name="amount" value="129.40"/>
+            <column name="order_date" value="2020-01-01"/>
+            <column name="account_id" value="3"/>
+        </insert>
+        <insert tableName="order">
+            <column name="id" valueNumeric="3"/>
+            <column name="order_id" value="1b4a3b06-7c98-11ed-a1eb-0242ac120002"/>
+            <column name="amount" value="122.00"/>
+            <column name="order_date" value="2020-01-01"/>
+            <column name="account_id" value="3"/>
+        </insert>
+        <insert tableName="order">
+            <column name="id" valueNumeric="4"/>
+            <column name="order_id" value="1b4a3c32-7c98-11ed-a1eb-0242ac120002"/>
+            <column name="amount" value="12.45"/>
+            <column name="order_date" value="2020-01-01"/>
+            <column name="account_id" value="3"/>
+        </insert>
+        <insert tableName="order">
+            <column name="id" valueNumeric="5"/>
+            <column name="order_id" value="1b4a3d54-7c98-11ed-a1eb-0242ac120002"/>
+            <column name="amount" value="71.02"/>
+            <column name="order_date" value="2020-01-01"/>
+            <column name="account_id" value="3"/>
+        </insert>
+    </changeSet>
+</databaseChangeLog>

@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<databaseChangeLog
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xmlns:ext="http://www.liquibase.org/xml/ns/dbchangelog-ext"
+        xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+        xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.1.xsd
+    http://www.liquibase.org/xml/ns/dbchangelog-ext http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-ext.xsd">
+
+    <changeSet author="macgor" id="1">
+        <createTable tableName="account">
+            <column autoIncrement="true" name="id" type="BIGINT(8)">
+                <constraints primaryKey="true"/>
+            </column>
+            <column name="first_name" type="VARCHAR(50)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="last_name" type="VARCHAR(50)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="email" type="VARCHAR(50)">
+                <constraints nullable="false"/>
+            </column>
+        </createTable>
+        <rollback>
+            <dropTable tableName="account"/>
+        </rollback>
+    </changeSet>
+
+    <changeSet author="macgor" id="2">
+        <createTable tableName="order">
+            <column autoIncrement="true" name="id" type="BIGINT(8)">
+                <constraints primaryKey="true"/>
+            </column>
+            <column name="order_id" type="VARCHAR(50)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="amount" type="NUMERIC">
+                <constraints nullable="false"/>
+            </column>
+            <column name="order_date" type="TIMESTAMP">
+                <constraints nullable="false"/>
+            </column>
+            <column name="account_id" type="BIGINT(8)">
+                <constraints nullable="false"/>
+            </column>
+        </createTable>
+        <rollback>
+            <dropTable tableName="order"/>
+        </rollback>
+    </changeSet>
+</databaseChangeLog>
